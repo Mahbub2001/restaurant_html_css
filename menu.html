@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - CaffHub</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100 text-gray-900">
+  <header class="bg-white shadow">
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <a href="index.html" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CaffHub</span>
+        </a>
+        <button data-collapse-toggle="navbar-default" type="button"
+          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          aria-controls="navbar-default" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15" />
+          </svg>
+        </button>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul
+            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+            <li>
+              <a href="index.html"
+                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                aria-current="page">Home</a>
+            </li>
+            <li>
+              <a href="menu.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Menu</a>
+            </li>
+            <li>
+              <a href="reservations.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Reservations</a>
+            </li>
+            <li>
+              <a href="contact.html"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container mx-auto p-6 min-h-screen">
+    <section>
+      <h2 class="text-4xl font-bold mb-4">Our Menu</h2>
+      <div class="dropdown relative inline-block mb-6">
+        <button class="bg-blue-500 text-white py-2 px-4 rounded inline-flex items-center">
+          <span class="mr-1">Categories</span>
+          <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path d="M5.293 9.293L10 14l4.707-4.707-1.414-1.414L10 11.172l-3.293-3.293z" />
+          </svg>
+        </button>
+        <div class="dropdown-content absolute right-0 mt-1 rounded-md shadow-lg bg-white">
+          <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" onclick="make_filter('all')">All</a>
+          <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+            onclick="make_filter('appetizers')">Appetizers</a>
+          <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100" onclick="make_filter('main-courses')">Main
+            Courses</a>
+          <a href="#" class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+            onclick="make_filter('desserts')">Desserts</a>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div id="appetizers" class="bg-white p-6 shadow rounded menu-item" data-category="appetizers">
+          <h3 class="text-xl font-bold mb-2">Appetizers</h3>
+          <p>Delicious starters to begin your meal.</p>
+          <ul class="mt-4">
+            <li class="mb-2">
+              <span class="font-bold">Bruschetta</span> - Grilled bread topped with fresh tomatoes, garlic, and basil.
+              ($8.99)
+            </li>
+            <li class="mb-2">
+              <span class="font-bold">Stuffed Mushrooms</span> - Mushrooms stuffed with cheese and herbs. ($9.99)
+            </li>
+          </ul>
+        </div>
+        <div id="main-courses" class="bg-white p-6 shadow rounded menu-item" data-category="main-courses">
+          <h3 class="text-xl font-bold mb-2">Main Courses</h3>
+          <p>Hearty and delicious main dishes.</p>
+          <ul class="mt-4">
+            <li class="mb-2">
+              <span class="font-bold">Grilled Salmon</span> - Fresh salmon grilled to perfection. ($18.99)
+            </li>
+            <li class="mb-2">
+              <span class="font-bold">Chicken Parmesan</span> - Breaded chicken with marinara sauce and cheese. ($16.99)
+            </li>
+          </ul>
+        </div>
+        <div id="desserts" class="bg-white p-6 shadow rounded menu-item" data-category="desserts">
+          <h3 class="text-xl font-bold mb-2">Desserts</h3>
+          <p>Sweet treats to end your meal.</p>
+          <ul class="mt-4">
+            <li class="mb-2">
+              <span class="font-bold">Tiramisu</span> - Classic Italian dessert with layers of coffee-soaked ladyfingers
+              and mascarpone cheese. ($6.99)
+            </li>
+            <li class="mb-2">
+              <span class="font-bold">Cheesecake</span> - Creamy cheesecake with a graham cracker crust. ($5.99)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-white shadow mt-6">
+    <div class="container mx-auto p-6 text-center">
+      <p>2024 Restaurant.<br> Developed by Mahbub Ahmed Turza.</p>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
